@@ -25,14 +25,17 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; bac
 .cover {
   min-height: 100vh;
   background: #0f1f1a;
-  padding: 64px 32px;
+  padding: 64px 32px 76px;
   position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-/* SUPPRESSION DES EFFETS CHEAP */
 .cover::before {
   display: none;
 }
@@ -41,40 +44,39 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; bac
   content: '';
   position: absolute;
   left: 32px;
-  bottom: 40px;
-  width: 48px;
+  bottom: 48px;
+  width: 52px;
   height: 1px;
   background: #c8a46b;
 }
 
-/* TYPO */
-
 .cover-eyebrow {
   font-size: 9px;
   font-weight: 600;
-  letter-spacing: 3px;
+  letter-spacing: 3.6px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 90px;
+  color: rgba(255,250,240,0.48);
+  margin-bottom: 112px;
 }
 
 .cover-title {
   font-family: 'Playfair Display', serif;
-  font-size: 64px;
+  font-size: 68px;
   font-weight: 300;
-  line-height: 0.95;
-  color: #f7f2e8;
-  letter-spacing: -1.5px;
+  line-height: 0.94;
+  color: #fffaf0;
+  letter-spacing: -2px;
 }
 
 .cover-title-sub {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 300;
-  color: #aab7ae;
+  color: rgba(255,250,240,0.68);
   display: block;
-  margin-top: 14px;
+  margin-top: 16px;
+  letter-spacing: -0.2px;
 }
 
 .cover-divider {
@@ -83,18 +85,17 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; bac
 
 .cover-meta {
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 2.8px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  margin-top: 28px;
+  color: rgba(255,250,240,0.46);
+  margin-top: 34px;
 }
 
-/* HOTELS */
-
 .cover-hotels {
-  margin-top: 70px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  margin-top: 76px;
+  padding: 22px 0 0;
+  border-top: 1px solid rgba(255,250,240,0.18);
+  background: transparent;
 }
 
 .cover-hotels-label {
@@ -102,30 +103,40 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; bac
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(200,164,107,0.88);
   margin-bottom: 14px;
 }
 
-.hotel-row {
+.cover .hotel-row {
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,250,240,0.14);
 }
 
-.hotel-name {
+.cover .hotel-row:last-child {
+  border-bottom: none;
+}
+
+.cover .hotel-name {
   font-family: 'Playfair Display', serif;
-  font-size: 16px;
-  letter-spacing: 0.2px;
-  color: rgba(255,255,255,0.92);
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255,250,240,0.94);
+  letter-spacing: 0.1px;
 }
 
-.hotel-night-tag {
+.cover .hotel-night-tag {
   font-size: 8px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,250,240,0.64);
+  white-space: nowrap;
 }
+
 .nav { display: flex; gap: 6px; position: sticky; top: 10px; z-index: 100; margin: -22px 18px 24px; padding: 7px; border-radius: 999px; background: rgba(255,250,240,0.94); border: 1px solid var(--line-warm); box-shadow: var(--shadow-soft); backdrop-filter: blur(14px); }
 .nav a { flex: 1; text-align: center; padding: 9px 3px; font-size: 9px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--forest); text-decoration: none; border-radius: 999px; transition: all 0.2s ease; }
 .nav a:hover, .nav a:active { background: var(--forest); color: var(--paper); }
@@ -222,33 +233,6 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; bac
 .footer-meta { font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,250,240,0.48); }
 .gap-md { height: 10px; }
 .section-divider { height: 24px; }
-*/
-
-.cover .hotel-name {
-
-  color: rgba(255, 250, 242, 0.94) !important;
-
-  opacity: 1 !important;
-
-}
-
-.cover .hotel-night-tag {
-
-  color: rgba(255, 250, 242, 0.68) !important;
-
-  opacity: 1 !important;
-
-}
-
-.cover .hotel-row {
-
-  border-bottom: 1px solid rgba(255, 250, 242, 0.16) !important;
-
-}
-
-.cover .cover-hotels {
-
-  border-top: 1px solid rgba(255, 250, 242, 0.18) !important;
 @media (max-width: 380px) { .cover-title { font-size: 58px; } .day-title, .section-title, .route-title { font-size: 27px; } .step { grid-template-columns: 52px 1fr; gap: 0 12px; } .step-time { font-size: 10px; } .route-map { height: 270px; } }
 </style>
 </head>
@@ -257,32 +241,15 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; bac
 <!-- ══════ COVER ══════ -->
 
 <div class="cover">
-  <div class="cover-inner">
-
-    <div class="cover-eyebrow">Itinéraire · Travel Designer</div>
-
-    <div class="cover-title">
-      Asturies
-      <span class="cover-title-sub">Paraíso Natural</span>
-    </div>
-
-    <div class="cover-meta">14 — 17 Mai 2026 · 4 jours</div>
-
-    <div class="cover-hotels">
-      <div class="hotel-row">
-        <span>Villa del Marqués</span>
-        <span>Nuit 1</span>
-      </div>
-      <div class="hotel-row">
-        <span>Indiana Boutique Hotel</span>
-        <span>Nuit 2</span>
-      </div>
-      <div class="hotel-row">
-        <span>La Casona de Sobrepiedra</span>
-        <span>Nuit 3</span>
-      </div>
-    </div>
-
+  <div class="cover-eyebrow">Itinéraire · Travel Designer</div>
+  <div class="cover-title">Asturies<span class="cover-title-sub">Paraíso Natural</span></div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">14 — 17 Mai 2026 &nbsp;·&nbsp; 4 jours</div>
+  <div class="cover-hotels">
+    <div class="cover-hotels-label">Hébergements</div>
+    <div class="hotel-row"><span class="hotel-name">Villa del Marqués</span><span class="hotel-night-tag">Nuit 1</span></div>
+    <div class="hotel-row"><span class="hotel-name">Indiana Boutique Hotel</span><span class="hotel-night-tag">Nuit 2</span></div>
+    <div class="hotel-row"><span class="hotel-name">La Casona de Sobrepiedra</span><span class="hotel-night-tag">Nuit 3</span></div>
   </div>
 </div>
 
