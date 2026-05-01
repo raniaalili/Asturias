@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asturies — 14–17 Mai</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+:root {
+–white:       #ffffff;
+–ivory:       #faf9f7;
+–cream:       #f4f1ec;
+–stone:       #e8e4dd;
+–ocean:       #7b9aaa;
+–ocean-light: #edf2f5;
+–sage:        #8fa496;
+–sage-light:  #f0f4f1;
+–brass:       #b09060;
+–text:        #2a2825;
+–text-mid:    #5c5850;
+–text-soft:   #9a958e;
+–border:      #e8e4dd;
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+  html { scroll-behavior: smooth; }
+
+body {
+background: var(–ivory);
+color: var(–text);
+font-family: ‘Inter’, sans-serif;
+font-weight: 300;
+font-size: 14px;
+line-height: 1.7;
+max-width: 430px;
+margin: 0 auto;
+padding-bottom: 80px;
+}
+
+/* ─────────────── COVER ─────────────── */
+.cover {
+background: var(–white);
+padding: 64px 32px 52px;
+border-bottom: 1px solid var(–border);
+}
+
+.cover-eyebrow {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: var(–brass);
+margin-bottom: 28px;
+}
+
+.cover-title {
+font-family: ‘Playfair Display’, serif;
+font-size: 48px;
+font-weight: 300;
+line-height: 1.0;
+color: var(–text);
+letter-spacing: -0.5px;
+}
+
+.cover-title-sub {
+font-family: ‘Playfair Display’, serif;
+font-style: italic;
+font-size: 28px;
+font-weight: 300;
+color: var(–ocean);
+display: block;
+margin-top: 6px;
+letter-spacing: 0;
+}
+
+.cover-divider {
+width: 32px;
+height: 1px;
+background: var(–brass);
+opacity: 0.5;
+margin: 28px 0;
+}
+
+.cover-meta {
+font-size: 11px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–text-soft);
+}
+
+.cover-hotels {
+margin-top: 36px;
+padding-top: 28px;
+border-top: 1px solid var(–border);
+}
+
+.cover-hotels-label {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–text-soft);
+margin-bottom: 14px;
+}
+
+.hotel-row {
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+padding: 9px 0;
+border-bottom: 1px solid var(–border);
+}
+.hotel-row:last-child { border-bottom: none; }
+
+.hotel-name {
+font-family: ‘Playfair Display’, serif;
+font-size: 14px;
+font-weight: 400;
+color: var(–text);
+}
+
+.hotel-night-tag {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–text-soft);
+}
+
+/* ─────────────── NAV ─────────────── */
+.nav {
+display: flex;
+background: var(–white);
+border-bottom: 1px solid var(–border);
+position: sticky;
+top: 0;
+z-index: 100;
+box-shadow: 0 1px 12px rgba(42,40,37,0.06);
+}
+
+.nav a {
+flex: 1;
+text-align: center;
+padding: 14px 4px;
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–text-soft);
+text-decoration: none;
+border-bottom: 1.5px solid transparent;
+transition: all 0.2s;
+}
+
+.nav a:hover {
+color: var(–ocean);
+border-bottom-color: var(–ocean);
+}
+
+/* ─────────────── DAY SEPARATOR ─────────────── */
+.day-sep {
+padding: 32px 32px 0;
+}
+
+.day-sep-inner {
+display: flex;
+align-items: center;
+gap: 16px;
+}
+
+.day-sep-line {
+flex: 1;
+height: 1px;
+background: var(–border);
+}
+
+.day-sep-text {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–brass);
+white-space: nowrap;
+}
+
+/* ─────────────── DAY HEADER ─────────────── */
+.section { padding: 0; }
+
+.day-header {
+padding: 36px 32px 28px;
+background: var(–white);
+}
+
+.day-label {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–ocean);
+margin-bottom: 12px;
+}
+
+.day-title {
+font-family: ‘Playfair Display’, serif;
+font-size: 26px;
+font-weight: 400;
+line-height: 1.2;
+color: var(–text);
+margin-bottom: 8px;
+}
+
+.day-sub {
+font-family: ‘Playfair Display’, serif;
+font-style: italic;
+font-size: 15px;
+color: var(–text-soft);
+font-weight: 300;
+}
+
+.zone-pill {
+display: inline-flex;
+align-items: center;
+margin-top: 18px;
+gap: 6px;
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+color: var(–sage);
+padding: 5px 12px;
+border-radius: 100px;
+border: 1px solid var(–sage);
+background: var(–sage-light);
+}
+
+/* ─────────────── TIMELINE ─────────────── */
+.timeline {
+background: var(–white);
+padding: 8px 32px 24px;
+}
+
+.step {
+display: grid;
+grid-template-columns: 44px 1fr;
+gap: 0 20px;
+padding: 18px 0;
+border-bottom: 1px solid var(–border);
+}
+.step:last-child { border-bottom: none; }
+
+.step-time {
+font-size: 11px;
+font-weight: 500;
+color: var(–brass);
+padding-top: 2px;
+text-align: right;
+letter-spacing: 0;
+opacity: 0.8;
+}
+
+.step-place {
+font-family: ‘Playfair Display’, serif;
+font-size: 17px;
+font-weight: 400;
+color: var(–text);
+line-height: 1.25;
+margin-bottom: 6px;
+}
+
+.step-desc {
+font-size: 13px;
+color: var(–text-mid);
+line-height: 1.65;
+}
+
+.step-tags {
+display: flex;
+gap: 6px;
+margin-top: 10px;
+flex-wrap: wrap;
+}
+
+.tag {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 1px;
+text-transform: uppercase;
+padding: 3px 10px;
+border-radius: 100px;
+}
+
+.tag-drive { color: var(–text-soft); background: var(–cream); }
+.tag-walk  { color: var(–sage);      background: var(–sage-light); }
+.tag-eat   { color: var(–brass);     background: #f5f0e8; }
+.tag-hotel { color: var(–ocean);     background: var(–ocean-light); }
+
+/* ─────────────── MOMENT FORT — citation premium ─────────────── */
+.moment {
+background: var(–white);
+padding: 0 32px 32px;
+}
+
+.moment-inner {
+border-left: 1.5px solid var(–ocean);
+padding: 4px 0 4px 20px;
+}
+
+.moment-eyebrow {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–ocean);
+margin-bottom: 8px;
+}
+
+.moment-text {
+font-family: ‘Playfair Display’, serif;
+font-style: italic;
+font-size: 16px;
+font-weight: 300;
+line-height: 1.6;
+color: var(–text);
+}
+
+/* ─────────────── HOTEL CARD ─────────────── */
+.hotel-card {
+margin: 0 32px 32px;
+background: var(–ocean-light);
+border-radius: 8px;
+padding: 20px 22px;
+border: none;
+}
+
+.hotel-card-eyebrow {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–ocean);
+margin-bottom: 8px;
+}
+
+.hotel-card-name {
+font-family: ‘Playfair Display’, serif;
+font-size: 18px;
+font-weight: 400;
+color: var(–text);
+margin-bottom: 6px;
+}
+
+.hotel-card-detail {
+font-size: 12px;
+color: var(–text-mid);
+line-height: 1.55;
+}
+
+/* ─────────────── ALERT ─────────────── */
+.alert-box {
+margin: 0 32px 20px;
+background: #fffbf0;
+border-radius: 8px;
+padding: 16px 18px;
+border: 1px solid #e8d89a;
+display: flex;
+gap: 12px;
+font-size: 13px;
+color: #6b5820;
+line-height: 1.55;
+}
+.alert-box-icon { flex-shrink: 0; }
+
+/* ─────────────── PRACTICAL ─────────────── */
+.practical-box {
+margin: 0 32px 20px;
+background: var(–cream);
+border-radius: 8px;
+padding: 18px 20px;
+}
+
+.practical-box-label {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–brass);
+margin-bottom: 12px;
+}
+
+.practical-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+.practical-box li {
+font-size: 13px;
+color: var(–text-mid);
+padding-left: 14px;
+position: relative;
+line-height: 1.5;
+}
+
+.practical-box li::before {
+content: ‘–’;
+position: absolute;
+left: 0;
+color: var(–brass);
+opacity: 0.6;
+}
+
+/* ─────────────── SECTION LARGE ─────────────── */
+.section-wide {
+padding: 48px 32px;
+}
+
+.section-eyebrow {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: var(–brass);
+margin-bottom: 8px;
+}
+
+.section-title {
+font-family: ‘Playfair Display’, serif;
+font-size: 26px;
+font-weight: 400;
+color: var(–text);
+margin-bottom: 4px;
+}
+
+.section-sub {
+font-size: 13px;
+color: var(–text-soft);
+margin-bottom: 28px;
+}
+
+/* ─────────────── RECAP TABLE ─────────────── */
+.recap-table {
+width: 100%;
+border-collapse: collapse;
+}
+
+.recap-table thead th {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–text-soft);
+text-align: left;
+padding-bottom: 12px;
+border-bottom: 1px solid var(–border);
+}
+
+.recap-table tbody td {
+padding: 14px 0;
+border-bottom: 1px solid var(–border);
+vertical-align: top;
+font-size: 13px;
+}
+
+.recap-table tbody tr:last-child td { border-bottom: none; }
+
+.recap-table .col-j {
+color: var(–ocean);
+font-weight: 500;
+font-size: 11px;
+letter-spacing: 1px;
+width: 28px;
+padding-top: 16px;
+}
+
+.recap-table .col-hotel {
+font-family: ‘Playfair Display’, serif;
+font-size: 16px;
+font-weight: 400;
+color: var(–text);
+padding-right: 12px;
+}
+
+.recap-table .col-zone {
+font-size: 11.5px;
+color: var(–text-soft);
+text-align: right;
+padding-top: 16px;
+}
+
+/* ─────────────── PROGRESS LIST ─────────────── */
+.progress-list {
+display: flex;
+flex-direction: column;
+gap: 0;
+margin-top: 24px;
+}
+
+.progress-item {
+display: flex;
+gap: 16px;
+padding: 14px 0;
+border-bottom: 1px solid var(–border);
+align-items: flex-start;
+}
+.progress-item:last-child { border-bottom: none; }
+
+.progress-dot {
+width: 6px; height: 6px;
+border-radius: 50%;
+background: var(–ocean);
+flex-shrink: 0;
+margin-top: 7px;
+}
+
+.progress-label {
+font-size: 11px;
+font-weight: 500;
+color: var(–ocean);
+margin-bottom: 2px;
+}
+
+.progress-text {
+font-size: 13px;
+color: var(–text-mid);
+line-height: 1.5;
+}
+
+/* ─────────────── CHECKLIST ─────────────── */
+.checklist-group {
+margin-bottom: 32px;
+}
+
+.checklist-group-label {
+font-size: 9px;
+font-weight: 500;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–text-soft);
+padding-bottom: 10px;
+border-bottom: 1px solid var(–border);
+margin-bottom: 4px;
+}
+
+.check-row {
+display: flex;
+gap: 14px;
+align-items: flex-start;
+padding: 12px 0;
+border-bottom: 1px solid var(–border);
+}
+.check-row:last-child { border-bottom: none; }
+
+.check-box {
+width: 18px; height: 18px;
+border: 1.5px solid var(–stone);
+border-radius: 4px;
+flex-shrink: 0;
+margin-top: 1px;
+background: var(–white);
+}
+
+.check-main { font-size: 14px; color: var(–text); line-height: 1.4; }
+.check-sub  { font-size: 12px; color: var(–text-soft); margin-top: 2px; line-height: 1.4; }
+
+/* ─────────────── ADAPT CARDS ─────────────── */
+.adapt-grid {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.adapt-card {
+background: var(–white);
+border-radius: 10px;
+overflow: hidden;
+border: 1px solid var(–border);
+box-shadow: 0 1px 6px rgba(42,40,37,0.04);
+}
+
+.adapt-head {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 15px 18px;
+font-size: 13.5px;
+font-weight: 400;
+color: var(–text);
+background: var(–white);
+}
+
+.adapt-emoji { font-size: 16px; }
+
+.adapt-body {
+border-top: 1px solid var(–border);
+padding: 14px 18px;
+font-size: 13px;
+color: var(–text-mid);
+line-height: 1.6;
+background: var(–ivory);
+}
+
+.adapt-body ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+
+.adapt-body li { padding-left: 14px; position: relative; }
+.adapt-body li::before { content: ‘–’; position: absolute; left: 0; color: var(–text-soft); }
+
+/* ─────────────── FOOTER ─────────────── */
+.footer {
+padding: 52px 32px;
+text-align: center;
+border-top: 1px solid var(–border);
+background: var(–white);
+}
+
+.footer-title {
+font-family: ‘Playfair Display’, serif;
+font-style: italic;
+font-size: 22px;
+font-weight: 300;
+color: var(–text-soft);
+margin-bottom: 10px;
+}
+
+.footer-meta {
+font-size: 9.5px;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+color: var(–text-soft);
+opacity: 0.6;
+}
+
+/* spacing helpers */
+.gap-sm { height: 12px; background: var(–ivory); }
+.gap-md { height: 24px; background: var(–ivory); }
+.gap-section { height: 2px; background: var(–border); }
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════ COVER ══════════════════════════════════ -->
+
+<div class="cover">
+  <div class="cover-eyebrow">Itinéraire · Travel Designer</div>
+
+  <div class="cover-title">
+    Asturies
+    <span class="cover-title-sub">Paraíso Natural</span>
+  </div>
+
+  <div class="cover-divider"></div>
+  <div class="cover-meta">14 — 17 Mai 2026 &nbsp;·&nbsp; 4 jours</div>
+
+  <div class="cover-hotels">
+    <div class="cover-hotels-label">Hébergements</div>
+    <div class="hotel-row">
+      <span class="hotel-name">Villa del Marqués</span>
+      <span class="hotel-night-tag">Nuit 1</span>
+    </div>
+    <div class="hotel-row">
+      <span class="hotel-name">Indiana Boutique Hotel</span>
+      <span class="hotel-night-tag">Nuit 2</span>
+    </div>
+    <div class="hotel-row">
+      <span class="hotel-name">La Casona de Sobrepiedra</span>
+      <span class="hotel-night-tag">Nuit 3</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+
+<div class="nav">
+  <a href="#j1">J1</a>
+  <a href="#j2">J2</a>
+  <a href="#j3">J3</a>
+  <a href="#j4">J4</a>
+  <a href="#checklist">✓</a>
+  <a href="#adapt">⚡</a>
+</div>
+
+<!-- ══════════════════════════════════ JOUR 1 ══════════════════════════════════ -->
+
+<div class="gap-md"></div>
+
+<div id="j1" class="section">
+  <div class="day-header">
+    <div class="day-label">Jour 1 · Jeudi 14 Mai</div>
+    <div class="day-title">Arrivée côte atlantique</div>
+    <div class="day-sub">La première respiration</div>
+    <span class="zone-pill">Muros de Nalón</span>
+  </div>
+
+  <div class="timeline">
+    <div class="step">
+      <div class="step-time">16h05</div>
+      <div>
+        <div class="step-place">Atterrissage</div>
+        <div class="step-desc">Aéroport de Ranón. Bagages, voiture de location.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">16h30</div>
+      <div>
+        <div class="step-place">Départ</div>
+        <div class="step-desc">A-8 direction San Esteban de Pravia.</div>
+        <div class="step-tags"><span class="tag tag-drive">45 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">17h15</div>
+      <div>
+        <div class="step-place">Check-in · Villa del Marqués</div>
+        <div class="step-desc">Muros de Nalón. Posez les valises, prenez le temps de souffler.</div>
+        <div class="step-tags"><span class="tag tag-hotel">Hôtel Nuit 1</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">18h15</div>
+      <div>
+        <div class="step-place">Estuaire du Nalón</div>
+        <div class="step-desc">5 min en voiture vers San Esteban de Pravia. Ria atlantique en lumière dorée, barques, mouettes, air de marée. Aucun touriste. 45 min de décompression active.</div>
+        <div class="step-tags"><span class="tag tag-walk">45 min · à pied</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">19h30</div>
+      <div>
+        <div class="step-place">Apéritif</div>
+        <div class="step-desc">Terrasse de l'hôtel dans les jardins. Commandez le cidre asturien versé à la asturiana.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">21h00</div>
+      <div>
+        <div class="step-place">Dîner · O'Parroxu</div>
+        <div class="step-desc">San Esteban de Pravia. Poissons de l'estuaire, ambiance locale. Ou table de l'hôtel si ouverte.</div>
+        <div class="step-tags"><span class="tag tag-eat">Dîner</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="moment">
+    <div class="moment-inner">
+      <div class="moment-eyebrow">Moment fort du jour</div>
+      <div class="moment-text">Lumière de 18h sur l'estuaire. Calme, beau, inattendu pour un soir d'arrivée.</div>
+    </div>
+  </div>
+
+  <div class="hotel-card">
+    <div class="hotel-card-eyebrow">Nuit 1 · 5.0 / 5</div>
+    <div class="hotel-card-name">Hotel Boutique Villa del Marqués</div>
+    <div class="hotel-card-detail">Muros de Nalón &nbsp;·&nbsp; Petit-déjeuner maison légendaire &nbsp;·&nbsp; Jardins &nbsp;·&nbsp; Piscine</div>
+  </div>
+</div>
+
+<div class="gap-section"></div>
+
+<!-- ══════════════════════════════════ JOUR 2 ══════════════════════════════════ -->
+
+<div class="day-sep">
+  <div class="day-sep-inner">
+    <div class="day-sep-line"></div>
+    <div class="day-sep-text">Vendredi 15 Mai</div>
+    <div class="day-sep-line"></div>
+  </div>
+</div>
+
+<div id="j2" class="section">
+  <div class="day-header">
+    <div class="day-label">Jour 2 · Vendredi 15 Mai</div>
+    <div class="day-title">Cudillero l'aube → Cabo Vidio → Lastres</div>
+    <div class="day-sub">Trois visages de la côte asturienne</div>
+    <span class="zone-pill">Côte Ouest → Côte Centrale</span>
+  </div>
+
+  <div class="timeline">
+    <div class="step">
+      <div class="step-time">7h45</div>
+      <div>
+        <div class="step-place">Départ</div>
+        <div class="step-desc">Direction Cudillero.</div>
+        <div class="step-tags"><span class="tag tag-drive">20 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">8h05</div>
+      <div>
+        <div class="step-place">Cudillero</div>
+        <div class="step-desc">Garez-vous en bas, montez à pied au <strong>Mirador de Cimadevilla</strong>. À cette heure : village silencieux, lumière oblique du matin sur l'amphithéâtre de maisons colorées. Descendez au port, café au comptoir chez un pêcheur. Partez avant les premiers cars.</div>
+        <div class="step-tags"><span class="tag tag-walk">1h30 sur place</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">9h45</div>
+      <div>
+        <div class="step-place">Départ · Cabo Vidio</div>
+        <div class="step-desc">Sur l'axe naturel vers l'est. Suivre la N-632 après l'A-8.</div>
+        <div class="step-tags"><span class="tag tag-drive">20 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">10h10</div>
+      <div>
+        <div class="step-place">Cabo Vidio</div>
+        <div class="step-desc">Garez-vous près du phare. Le sentier côtier longe des falaises calcaires tombant à pic dans le Cantabrique — vertigineux, sauvage, quasi-désert en mai. Vue simultanée sur la côte vers l'est et l'ouest.</div>
+        <div class="step-tags"><span class="tag tag-walk">45 min · sentier</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">11h15</div>
+      <div>
+        <div class="step-place">Départ · Lastres</div>
+        <div class="step-desc">Via A-8 direction est.</div>
+        <div class="step-tags"><span class="tag tag-drive">1h</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">12h15</div>
+      <div>
+        <div class="step-place">Lastres</div>
+        <div class="step-desc">Parking en haut du village (gratuit à l'entrée). Montez directement au <strong>Mirador de San Roque</strong> — vertigineux. Descendez dans les ruelles en labyrinthe jusqu'au port.</div>
+        <div class="step-tags"><span class="tag tag-walk">1h dans le village</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">13h30</div>
+      <div>
+        <div class="step-place">Déjeuner · Casa Eutimio</div>
+        <div class="step-desc">Institution depuis 1936. Merluza a la sidra, anchois frais, cidre versé debout. Réservez la veille.</div>
+        <div class="step-tags"><span class="tag tag-eat">Déjeuner</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">15h00</div>
+      <div>
+        <div class="step-place">Départ · Llanes</div>
+        <div class="step-tags"><span class="tag tag-drive">45 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">15h45</div>
+      <div>
+        <div class="step-place">Check-in · Indiana Boutique Hotel</div>
+        <div class="step-tags"><span class="tag tag-hotel">Hôtel Nuit 2</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">16h30</div>
+      <div>
+        <div class="step-place">Paseo de San Pedro · Llanes</div>
+        <div class="step-desc">Chemin de falaise au-dessus de Llanes. Port, Cubos de la Memoria à contre-jour en fin d'après-midi.</div>
+        <div class="step-tags"><span class="tag tag-walk">1h · bord de falaise</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">21h00</div>
+      <div>
+        <div class="step-place">Dîner · Llanes</div>
+        <div class="step-desc"><strong>El Retiro de Palacio</strong> ou sidrería locale recommandée par l'hôtel.</div>
+        <div class="step-tags"><span class="tag tag-eat">Dîner</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="moment">
+    <div class="moment-inner">
+      <div class="moment-eyebrow">3 moments forts</div>
+      <div class="moment-text">Cudillero dans le silence de l'aube · Cabo Vidio et ses falaises sauvages · Mirador de San Roque à Lastres</div>
+    </div>
+  </div>
+
+  <div class="hotel-card">
+    <div class="hotel-card-eyebrow">Nuit 2 · 4.7 / 5</div>
+    <div class="hotel-card-name">Indiana Boutique Hotel</div>
+    <div class="hotel-card-detail">Llanes &nbsp;·&nbsp; Architecture "indiano" coloniale &nbsp;·&nbsp; Jardins &nbsp;·&nbsp; Vue montagnes</div>
+  </div>
+</div>
+
+<div class="gap-section"></div>
+
+<!-- ══════════════════════════════════ JOUR 3 ══════════════════════════════════ -->
+
+<div class="day-sep">
+  <div class="day-sep-inner">
+    <div class="day-sep-line"></div>
+    <div class="day-sep-text">Samedi 16 Mai</div>
+    <div class="day-sep-line"></div>
+  </div>
+</div>
+
+<div id="j3" class="section">
+  <div class="day-header">
+    <div class="day-label">Jour 3 · Samedi 16 Mai</div>
+    <div class="day-title">La journée reine</div>
+    <div class="day-sub">Mer brute le matin · Cœur des Picos le soir</div>
+    <span class="zone-pill">Bufones → Picos de Europa</span>
+  </div>
+
+  <div class="gap-sm"></div>
+
+  <div class="alert-box">
+    <div class="alert-box-icon">⚠️</div>
+    <div><strong>Accès Lacs en navette obligatoire</strong> — Le samedi 16 mai est une date régulée. Voiture privée interdite sur la route des Lacs. Navette ALSA depuis Cangas de Onís (9€/adulte). <strong>Achetez vos billets à l'avance sur alsa.com.</strong></div>
+  </div>
+
+  <div class="practical-box">
+    <div class="practical-box-label">⏰ Action la veille au soir</div>
+    <ul>
+      <li>Consultez <strong>tideschart.com</strong> pour Llanes — notez l'heure de pleine mer du samedi</li>
+      <li>Organisez votre réveil pour arriver aux Bufones <strong>1h avant</strong> la pleine mer</li>
+      <li>Le programme ci-dessous suppose une pleine mer vers 10h — ajustez si différent</li>
+    </ul>
+  </div>
+
+  <div class="timeline">
+    <div class="step">
+      <div class="step-time">8h30</div>
+      <div>
+        <div class="step-place">Départ · Bufones de Pría</div>
+        <div class="step-tags"><span class="tag tag-drive">30 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">9h00</div>
+      <div>
+        <div class="step-place">Bufones de Pría</div>
+        <div class="step-desc">Parking de Llames de Pría, 15 min à pied jusqu'aux falaises. Cheminées calcaires, jets d'eau sous pression, grondements sourds qui font vibrer le sol. Prolongez jusqu'à la <strong>Playa de Guadamía</strong> — plage quasi-fluviale aux eaux turquoises encaissée entre les rochers.</div>
+        <div class="step-tags"><span class="tag tag-walk">2h sur site · ne précipitez pas</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">11h15</div>
+      <div>
+        <div class="step-place">Départ · Cangas de Onís</div>
+        <div class="step-tags"><span class="tag tag-drive">45 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">12h00</div>
+      <div>
+        <div class="step-place">Cangas de Onís · Déjeuner</div>
+        <div class="step-desc">Garez la voiture à la gare routière (2€ la journée). <strong>El Molín de la Pedrera</strong> — moulin du XVIIIe au bord du Sella. Achetez vos billets navette si ce n'est pas fait.</div>
+        <div class="step-tags">
+          <span class="tag tag-eat">Déjeuner</span>
+          <span class="tag tag-drive">Bus navette 13h30</span>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">13h30</div>
+      <div>
+        <div class="step-place">Bus navette → Covadonga → Lacs</div>
+        <div class="step-desc">Arrêt optionnel à <strong>Covadonga</strong> (basilique rose, Sainte Grotte, cascade — 30–40 min). Descendez et prenez le bus suivant vers les Lacs.</div>
+        <div class="step-tags"><span class="tag tag-drive">~1h30 avec arrêt Covadonga</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">15h00</div>
+      <div>
+        <div class="step-place">Lacs de Covadonga</div>
+        <div class="step-desc">Boucle Enol–Ercina (5 km, 1h30, facile). <strong>Mirador de Entrelagos</strong> pour la vue simultanée sur les deux lacs. Finissez au Lac Ercina — plus encaissé, plus dramatique.</div>
+        <div class="step-tags"><span class="tag tag-walk">5 km · niveau facile</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">17h00</div>
+      <div>
+        <div class="step-place">Lumière rasante · Lac Ercina</div>
+        <div class="step-desc">Les Picos projettent leurs ombres sur l'eau. Les vaches sont immobiles dans les prairies alpines. Le silence est total. Restez aussi longtemps que vous le sentez.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">18h00</div>
+      <div>
+        <div class="step-place">Bus retour → Cangas de Onís</div>
+        <div class="step-tags"><span class="tag tag-drive">~45 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">18h45</div>
+      <div>
+        <div class="step-place">Route · La Casona de Sobrepiedra</div>
+        <div class="step-tags"><span class="tag tag-drive">15 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">19h00</div>
+      <div>
+        <div class="step-place">Check-in · La Casona de Sobrepiedra</div>
+        <div class="step-desc">Terrasse face aux Picos. Verre. Silence. Ne bougez plus.</div>
+        <div class="step-tags"><span class="tag tag-hotel">Hôtel Nuit 3</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">21h00</div>
+      <div>
+        <div class="step-place">Dîner</div>
+        <div class="step-desc">À l'hôtel ou Cangas de Onís (15 min). Ce soir, le dîner est secondaire — le paysage a tout donné.</div>
+        <div class="step-tags"><span class="tag tag-eat">Dîner</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="moment">
+    <div class="moment-inner">
+      <div class="moment-eyebrow">3 moments forts</div>
+      <div class="moment-text">Bufones à la pleine mer · Lac Ercina en lumière rasante · Terrasse de la Casona au crépuscule face aux Picos</div>
+    </div>
+  </div>
+
+  <div class="hotel-card">
+    <div class="hotel-card-eyebrow">Nuit 3 · 4.7 / 5</div>
+    <div class="hotel-card-name">La Casona de Sobrepiedra</div>
+    <div class="hotel-card-detail">Vallée du Sella &nbsp;·&nbsp; Vue directe sur les Picos &nbsp;·&nbsp; Rivière à pied &nbsp;·&nbsp; Hôte exceptionnel</div>
+  </div>
+</div>
+
+<div class="gap-section"></div>
+
+<!-- ══════════════════════════════════ JOUR 4 ══════════════════════════════════ -->
+
+<div class="day-sep">
+  <div class="day-sep-inner">
+    <div class="day-sep-line"></div>
+    <div class="day-sep-text">Dimanche 17 Mai</div>
+    <div class="day-sep-line"></div>
+  </div>
+</div>
+
+<div id="j4" class="section">
+  <div class="day-header">
+    <div class="day-label">Jour 4 · Dimanche 17 Mai</div>
+    <div class="day-title">Le belvédère final</div>
+    <div class="day-sub">Synthèse et envol</div>
+    <span class="zone-pill">Mirador del Fitu → Aéroport</span>
+  </div>
+
+  <div class="timeline">
+    <div class="step">
+      <div class="step-time">8h00</div>
+      <div>
+        <div class="step-place">Petit-déjeuner · La Casona</div>
+        <div class="step-desc">Dernière vue sur les Picos au réveil.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">9h00</div>
+      <div>
+        <div class="step-place">Départ · Mirador del Fitu</div>
+        <div class="step-desc">Via AS-260 — la route elle-même est belle, serpentant entre forêts et prairies.</div>
+        <div class="step-tags"><span class="tag tag-drive">45 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">9h45</div>
+      <div>
+        <div class="step-place">Mirador del Fitu · 1100 m</div>
+        <div class="step-desc">La tour de béton de 1927 vous élève au-dessus des arbres. Vue à 360° : au nord, la côte que vous avez longée. Au sud, les Picos où vous étiez hier. Synthèse visuelle complète de votre voyage en un seul coup d'œil. Arrivez avant 10h — après, les groupes du week-end arrivent.</div>
+        <div class="step-tags"><span class="tag tag-walk">45 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">10h30</div>
+      <div>
+        <div class="step-place">Départ · Aéroport</div>
+        <div class="step-tags"><span class="tag tag-drive">55 min</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">11h30</div>
+      <div>
+        <div class="step-place">Option · Playa de Salinas</div>
+        <div class="step-desc">10 min de l'aéroport. Plage longue et venteuse. Dernière respiration face au Cantabrique avant d'embarquer. Si vous avez de l'avance.</div>
+        <div class="step-tags"><span class="tag tag-walk">Optionnel</span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">13h30</div>
+      <div>
+        <div class="step-place">Aéroport de Ranón</div>
+        <div class="step-desc">Arrivée large, sans stress.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-time">15h55</div>
+      <div>
+        <div class="step-place">Envol ✈</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="moment">
+    <div class="moment-inner">
+      <div class="moment-eyebrow">Moment fort unique</div>
+      <div class="moment-text">Le Fitu à 10h, mer et montagne simultanées — la synthèse visuelle de tout ce que vous venez de vivre.</div>
+    </div>
+  </div>
+
+  <div class="gap-md"></div>
+</div>
+
+<div class="gap-section"></div>
+
+<!-- ══════════════════════════════════ RÉCAP ══════════════════════════════════ -->
+
+<div class="section-wide" style="background: var(--white);">
+  <div class="section-eyebrow">Vue d'ensemble</div>
+  <div class="section-title">Récapitulatif</div>
+  <div class="section-sub">Hôtels et étapes du voyage</div>
+
+  <table class="recap-table">
+    <thead>
+      <tr><th>J</th><th>Hôtel</th><th>Zone</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-j">J1</td>
+        <td class="col-hotel">Villa del Marqués</td>
+        <td class="col-zone">Muros de Nalón</td>
+      </tr>
+      <tr>
+        <td class="col-j">J2</td>
+        <td class="col-hotel">Indiana Boutique Hotel</td>
+        <td class="col-zone">Llanes</td>
+      </tr>
+      <tr>
+        <td class="col-j">J3</td>
+        <td class="col-hotel">La Casona de Sobrepiedra</td>
+        <td class="col-zone">Picos / Sella</td>
+      </tr>
+      <tr>
+        <td class="col-j">J4</td>
+        <td class="col-hotel">—</td>
+        <td class="col-zone">Envol 15h55</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="progress-list" style="margin-top: 36px;">
+    <div class="progress-item">
+      <div class="progress-dot"></div>
+      <div>
+        <div class="progress-label">Jour 1</div>
+        <div class="progress-text">Côte douce. Arrivée apaisante.</div>
+      </div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-dot"></div>
+      <div>
+        <div class="progress-label">Jour 2</div>
+        <div class="progress-text">Villages de caractère. Montée en intensité.</div>
+      </div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-dot"></div>
+      <div>
+        <div class="progress-label">Jour 3</div>
+        <div class="progress-text">Choc sensoriel côte + montagne. Climax.</div>
+      </div>
+    </div>
+    <div class="progress-item">
+      <div class="progress-dot"></div>
+      <div>
+        <div class="progress-label">Jour 4</div>
+        <div class="progress-text">Panorama conclusif. Sortie en beauté.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gap-section"></div>
+
+<!-- ══════════════════════════════════ CHECKLIST ══════════════════════════════════ -->
+
+<div id="checklist" class="section-wide" style="background: var(--ivory);">
+  <div class="section-eyebrow">Avant le départ</div>
+  <div class="section-title">Checklist</div>
+  <div class="section-sub">Actions à compléter avant de partir</div>
+
+  <div class="checklist-group">
+    <div class="checklist-group-label">Réservations obligatoires</div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Billets navette Lacs de Covadonga</div>
+        <div class="check-sub">alsa.com · pour le samedi 16 mai · 9€/adulte · acheter avant le voyage</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Déjeuner Casa Eutimio · Lastres</div>
+        <div class="check-sub">Pour le vendredi 15 mai · réservez 2–3 jours avant</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Voiture de location confirmée</div>
+        <div class="check-sub">Aéroport de Ranón · vérifiez les horaires de retrait</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="checklist-group">
+    <div class="checklist-group-label">À faire sur place (J2 soir)</div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Consulter les marées pour le J3</div>
+        <div class="check-sub">tideschart.com · chercher "Llanes" · noter l'heure de pleine mer du 16 mai</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Régler le réveil du J3 selon la marée</div>
+        <div class="check-sub">Objectif : arriver aux Bufones 1h avant la pleine mer</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="checklist-group">
+    <div class="checklist-group-label">À emporter</div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Chaussures de marche légères</div>
+        <div class="check-sub">Sentiers côtiers + lacs · pas besoin de chaussures techniques</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Coupe-vent imperméable</div>
+        <div class="check-sub">Mai en Asturies = variable · prévoir même si beau temps annoncé</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Crème solaire + lunettes</div>
+        <div class="check-sub">Pour les falaises exposées et l'altitude des Lacs</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Espèces liquides</div>
+        <div class="check-sub">Certains parkings et petits restaurants ne prennent pas la carte</div>
+      </div>
+    </div>
+    <div class="check-row">
+      <div class="check-box"></div>
+      <div>
+        <div class="check-main">Téléphone chargé + powerbank</div>
+        <div class="check-sub">Pour les zones sans réseau dans les Picos</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gap-section"></div>
+
+<!-- ══════════════════════════════════ ADAPTATIONS ══════════════════════════════════ -->
+
+<div id="adapt" class="section-wide" style="background: var(--white);">
+  <div class="section-eyebrow">Si nécessaire</div>
+  <div class="section-title">Adaptations rapides</div>
+  <div class="section-sub">Quoi ajuster selon la météo ou l'énergie</div>
+
+  <div class="adapt-grid">
+    <div class="adapt-card">
+      <div class="adapt-head"><div class="adapt-emoji">🌧️</div><div>Mauvaise météo le J2</div></div>
+      <div class="adapt-body"><ul>
+        <li>Cudillero reste beau sous la pluie — les falaises sont plus dramatiques</li>
+        <li>Reportez Cabo Vidio (pas intéressant si brouillard épais)</li>
+        <li>Remplacez par une longue pause à Lastres avec visite de l'église Santa María et du marché couvert</li>
+      </ul></div>
+    </div>
+
+```
+<div class="adapt-card">
+  <div class="adapt-head"><div class="adapt-emoji">🌊</div><div>Mer calme le J3 (Bufones décevants)</div></div>
+  <div class="adapt-body"><ul>
+    <li>Même sans jets d'eau, les falaises et la géologie sont impressionnantes</li>
+    <li>Compensez en prolongeant jusqu'à la Playa de Guadamía (20 min de plus)</li>
+    <li>Le reste de la journée (Picos) reste inchangé et intact</li>
+  </ul></div>
+</div>
+
+<div class="adapt-card">
+  <div class="adapt-head"><div class="adapt-emoji">😴</div><div>Fatigue en milieu de voyage</div></div>
+  <div class="adapt-body"><ul>
+    <li>J2 : supprimez Cabo Vidio, gardez uniquement Cudillero et Lastres</li>
+    <li>J3 : si vous arrivez épuisée aux Lacs, faites seulement le tour du Lac Enol (2 km, 30 min)</li>
+    <li>Ne sacrifiez jamais les Bufones ni le Mirador del Fitu — ce sont les deux moments irremplaçables</li>
+  </ul></div>
+</div>
+
+<div class="adapt-card">
+  <div class="adapt-head"><div class="adapt-emoji">☁️</div><div>Brouillard au Mirador del Fitu (J4)</div></div>
+  <div class="adapt-body"><ul>
+    <li>Fréquent en mai le matin — attendez 30 min, souvent ça se lève</li>
+    <li>Si persistant : descendez vers la Playa de Salinas et profitez d'une heure de mer avant l'aéroport</li>
+    <li>Pas de panique — les 3 jours précédents ont déjà tout donné</li>
+  </ul></div>
+</div>
+
+<div class="adapt-card">
+  <div class="adapt-head"><div class="adapt-emoji">🚌</div><div>Bus navette complet pour les Lacs</div></div>
+  <div class="adapt-body"><ul>
+    <li>Si vous n'avez pas réservé à l'avance : prenez le premier bus du matin à 8h00 (moins saturé)</li>
+    <li>Les taxis n'ont pas de restrictions — option alternative mais plus coûteuse (~30€ aller)</li>
+    <li>Si vraiment impossible : Covadonga sanctuaire seul + randonnée courte dans la vallée depuis Cangas de Onís</li>
+  </ul></div>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+  <div class="footer-title">Buen viaje</div>
+  <div class="footer-meta">Asturies · 14–17 Mai 2026 · Itinéraire finalisé</div>
+</div>
+
+</body>
+</html>
