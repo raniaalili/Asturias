@@ -1,593 +1,751 @@
-<!DOCTYPE html>
+Oui — colle ce fichier entier dans index.html.
 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Asturies — 14–17 Mai</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
 :root {
-–ocean:        #1e5f7a;
-–ocean-mid:    #2d7a9a;
-–ocean-light:  #b8d8e8;
-–ocean-pale:   #e8f3f8;
-–sage:         #3a6b52;
-–sage-light:   #c8dfd2;
-–sage-pale:    #eaf3ee;
-–brass:        #8a6020;
-–brass-light:  #e8cfa0;
-–brass-pale:   #faf0dc;
-–ivory:        #f8f5f0;
-–cream:        #f0ebe0;
-–white:        #ffffff;
-–text:         #1a1814;
-–text-mid:     #4a4540;
-–text-soft:    #8a857e;
-–border:       #ddd8ce;
+  --ocean: #123f52;
+  --ocean-mid: #2f6f83;
+  --ocean-light: #9fc4cd;
+  --ocean-pale: #e9f3f4;
+  --sage: #607767;
+  --sage-light: #c9d8ce;
+  --sage-pale: #eef5f0;
+  --sand: #d8c4a2;
+  --sand-light: #eadbc1;
+  --sand-pale: #f6eedf;
+  --brass: #9a7440;
+  --brass-light: #d9bd8b;
+  --brass-pale: #fbf1df;
+  --ivory: #f8f3ea;
+  --cream: #efe5d6;
+  --white: #fffaf2;
+  --ink: #171512;
+  --text: #27221d;
+  --muted: #766f66;
+  --soft: #a69c8f;
+  --border: rgba(154, 116, 64, 0.22);
+  --shadow-soft: 0 12px 40px rgba(18, 63, 82, 0.10);
+  --shadow-card: 0 18px 50px rgba(23, 21, 18, 0.08);
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
 }
-
-- { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-  html { scroll-behavior: smooth; }
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
-background: var(–ivory);
-color: var(–text);
-font-family: ‘Inter’, sans-serif;
-font-weight: 300;
-font-size: 14px;
-line-height: 1.7;
-max-width: 430px;
-margin: 0 auto;
-padding-bottom: 80px;
+  background:
+    radial-gradient(circle at top right, rgba(159, 196, 205, 0.22), transparent 34%),
+    linear-gradient(180deg, #fbf6ee 0%, var(--ivory) 45%, #f3eadb 100%);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 430px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  overflow-x: hidden;
 }
-
-/* ── COVER ── */
+/* COVER */
 .cover {
-background: linear-gradient(150deg, #0d3a52 0%, #1e5f7a 45%, #2a7090 100%);
-padding: 64px 32px 64px;
-position: relative;
-overflow: hidden;
+  min-height: 660px;
+  background:
+    radial-gradient(circle at 85% 5%, rgba(255,255,255,0.14), transparent 28%),
+    linear-gradient(145deg, #092c3b 0%, var(--ocean) 46%, #1d6578 100%);
+  padding: 58px 28px 76px;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: 34px;
+  border-bottom-right-radius: 34px;
+  box-shadow: 0 26px 70px rgba(18, 63, 82, 0.24);
 }
-
 .cover::before {
-content: ‘’;
-position: absolute;
-top: -80px; right: -80px;
-width: 260px; height: 260px;
-border-radius: 50%;
-background: rgba(255,255,255,0.04);
+  content: '';
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  top: -140px;
+  right: -170px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.035);
 }
-
 .cover::after {
-content: ‘’;
-position: absolute;
-bottom: 0; left: 0; right: 0;
-height: 48px;
-background: var(–ivory);
-clip-path: ellipse(60% 100% at 50% 100%);
+  content: '';
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(234,219,193,0.65), transparent);
 }
-
 .cover-eyebrow {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 4px;
-text-transform: uppercase;
-color: rgba(255,255,255,0.5);
-margin-bottom: 32px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3.8px;
+  text-transform: uppercase;
+  color: rgba(255,250,242,0.56);
+  margin-bottom: 84px;
 }
-
 .cover-title {
-font-family: ‘Playfair Display’, serif;
-font-size: 54px;
-font-weight: 300;
-line-height: 1.0;
-color: #ffffff;
-letter-spacing: -1px;
+  font-family: 'Playfair Display', serif;
+  font-size: 66px;
+  font-weight: 300;
+  line-height: 0.92;
+  color: var(--white);
+  letter-spacing: -2.2px;
+  text-shadow: 0 18px 50px rgba(0,0,0,0.18);
 }
-
 .cover-title-sub {
-font-family: ‘Playfair Display’, serif;
-font-style: italic;
-font-size: 30px;
-font-weight: 300;
-color: rgba(255,255,255,0.6);
-display: block;
-margin-top: 8px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 30px;
+  font-weight: 300;
+  color: rgba(255,250,242,0.68);
+  display: block;
+  margin-top: 14px;
+  letter-spacing: -0.2px;
 }
-
 .cover-divider {
-width: 40px;
-height: 1px;
-background: rgba(255,255,255,0.3);
-margin: 28px 0;
+  width: 58px;
+  height: 1px;
+  background: var(--sand);
+  margin: 34px 0 26px;
+  opacity: 0.8;
 }
-
 .cover-meta {
-font-size: 11px;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-color: rgba(255,255,255,0.5);
+  font-size: 10px;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  color: rgba(255,250,242,0.56);
 }
-
 .cover-hotels {
-margin-top: 36px;
-padding-top: 24px;
-border-top: 1px solid rgba(255,255,255,0.12);
+  margin-top: 54px;
+  padding: 20px 18px 14px;
+  border: 1px solid rgba(234,219,193,0.22);
+  border-radius: 24px;
+  background: rgba(255,250,242,0.07);
+  backdrop-filter: blur(12px);
 }
-
 .cover-hotels-label {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: rgba(255,255,255,0.35);
-margin-bottom: 14px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(234,219,193,0.62);
+  margin-bottom: 12px;
 }
-
 .hotel-row {
-display: flex;
-align-items: baseline;
-justify-content: space-between;
-padding: 10px 0;
-border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,250,242,0.10);
 }
-.hotel-row:last-child { border-bottom: none; }
-
+.hotel-row:last-child {
+  border-bottom: none;
+}
 .hotel-name {
-font-family: ‘Playfair Display’, serif;
-font-size: 15px;
-font-weight: 400;
-color: rgba(255,255,255,0.88);
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,250,242,0.93);
 }
-
 .hotel-night-tag {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: rgba(255,255,255,0.35);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,250,242,0.42);
+  white-space: nowrap;
 }
-
-/* ── NAV ── */
+/* NAV */
 .nav {
-display: flex;
-background: var(–ocean);
-position: sticky;
-top: 0;
-z-index: 100;
-box-shadow: 0 2px 20px rgba(30,95,122,0.35);
+  display: flex;
+  gap: 7px;
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+  margin: -28px 18px 28px;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(255,250,242,0.82);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 14px 40px rgba(18,63,82,0.16);
+  border: 1px solid rgba(154,116,64,0.18);
 }
-
 .nav a {
-flex: 1;
-text-align: center;
-padding: 15px 4px;
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-color: rgba(255,255,255,0.55);
-text-decoration: none;
-border-bottom: 2px solid transparent;
-transition: all 0.2s;
+  flex: 1;
+  text-align: center;
+  padding: 10px 3px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.9px;
+  text-transform: uppercase;
+  color: var(--ocean);
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.22s ease;
 }
-
-.nav a:hover, .nav a:active {
-color: #ffffff;
-border-bottom-color: rgba(255,255,255,0.7);
-background: rgba(255,255,255,0.08);
+.nav a:hover,
+.nav a:active {
+  background: var(--ocean);
+  color: var(--white);
 }
-
-/* ── DAY SEPARATOR ── */
+/* DAY SEPARATOR */
 .day-sep {
-padding: 40px 32px 0;
-display: flex;
-align-items: center;
-gap: 16px;
+  padding: 30px 28px 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
-
-.day-sep-line { flex: 1; height: 1px; background: var(–border); }
-
+.day-sep-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
 .day-sep-text {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(–brass);
-white-space: nowrap;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brass);
+  white-space: nowrap;
 }
-
-/* ── DAY HEADER ── */
-.section { padding: 0; }
-
+/* DAY HEADER */
+.section {
+  padding: 0 18px 0;
+}
 .day-header {
-padding: 28px 32px 24px;
-background: var(–white);
-border-left: 4px solid var(–ocean);
-margin-top: 8px;
+  padding: 28px 24px 26px;
+  background:
+    linear-gradient(135deg, rgba(255,250,242,0.98), rgba(246,238,223,0.94));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
 }
-
+.day-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 92px;
+  height: 92px;
+  border-bottom-left-radius: 100%;
+  background: rgba(47,111,131,0.09);
+}
 .day-label {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(–ocean);
-margin-bottom: 12px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ocean-mid);
+  margin-bottom: 14px;
+  position: relative;
 }
-
 .day-title {
-font-family: ‘Playfair Display’, serif;
-font-size: 26px;
-font-weight: 400;
-line-height: 1.2;
-color: var(–text);
-margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.4px;
+  position: relative;
 }
-
 .day-sub {
-font-family: ‘Playfair Display’, serif;
-font-style: italic;
-font-size: 15px;
-color: var(–text-soft);
-font-weight: 300;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 300;
+  position: relative;
 }
-
 .zone-pill {
-display: inline-flex;
-align-items: center;
-margin-top: 16px;
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-color: var(–white);
-padding: 6px 14px;
-border-radius: 100px;
-background: var(–sage);
+  display: inline-flex;
+  align-items: center;
+  margin-top: 18px;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--sage), #395944);
+  box-shadow: 0 8px 22px rgba(96,119,103,0.18);
+  position: relative;
 }
-
-/* ── TIMELINE ── */
+/* TIMELINE */
 .timeline {
-background: var(–white);
-padding: 4px 32px 20px;
+  background: rgba(255,250,242,0.78);
+  padding: 12px 18px 20px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
 }
-
 .step {
-display: grid;
-grid-template-columns: 44px 1fr;
-gap: 0 20px;
-padding: 18px 0;
-border-bottom: 1px solid var(–border);
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 0 14px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(154,116,64,0.14);
 }
-.step:last-child { border-bottom: none; }
-
+.step:last-child {
+  border-bottom: none;
+}
 .step-time {
-font-size: 11px;
-font-weight: 500;
-color: var(–brass);
-padding-top: 3px;
-text-align: right;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--brass);
+  padding-top: 4px;
+  text-align: center;
+  height: fit-content;
+  border: 1px solid rgba(154,116,64,0.28);
+  border-radius: 999px;
+  padding: 3px 7px;
+  background: rgba(251,241,223,0.75);
 }
-
 .step-place {
-font-family: ‘Playfair Display’, serif;
-font-size: 17px;
-font-weight: 400;
-color: var(–text);
-line-height: 1.25;
-margin-bottom: 6px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 6px;
 }
-
 .step-desc {
-font-size: 13px;
-color: var(–text-mid);
-line-height: 1.65;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.64;
 }
-
+.step-desc strong {
+  font-weight: 500;
+  color: var(--text);
+}
 .step-tags {
-display: flex;
-gap: 6px;
-margin-top: 10px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
 }
-
 .tag {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 1px;
-text-transform: uppercase;
-padding: 4px 12px;
-border-radius: 100px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
 }
-
-.tag-drive { color: var(–text-soft);  background: var(–cream); border: 1px solid var(–border); }
-.tag-walk  { color: var(–sage);       background: var(–sage-pale); border: 1px solid var(–sage-light); }
-.tag-eat   { color: var(–brass);      background: var(–brass-pale); border: 1px solid var(–brass-light); }
-.tag-hotel { color: var(–white);      background: var(–ocean); border: none; }
-
-/* ── MOMENT FORT ── */
+.tag-drive {
+  color: var(--muted);
+  background: rgba(239,229,214,0.72);
+  border: 1px solid rgba(154,116,64,0.18);
+}
+.tag-walk {
+  color: var(--sage);
+  background: var(--sage-pale);
+  border: 1px solid var(--sage-light);
+}
+.tag-eat {
+  color: var(--brass);
+  background: var(--brass-pale);
+  border: 1px solid var(--brass-light);
+}
+.tag-hotel {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--ocean), var(--ocean-mid));
+  border: none;
+}
+/* MOMENT */
 .moment {
-background: var(–ocean-pale);
-border-left: 4px solid var(–ocean);
-padding: 22px 24px 22px 28px;
+  background:
+    linear-gradient(135deg, rgba(233,243,244,0.96), rgba(255,250,242,0.96));
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 24px 24px 24px;
+  box-shadow: var(--shadow-card);
 }
-
 .moment-eyebrow {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-color: var(–ocean-mid);
-margin-bottom: 10px;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  color: var(--ocean-mid);
+  margin-bottom: 12px;
 }
-
 .moment-text {
-font-family: ‘Playfair Display’, serif;
-font-style: italic;
-font-size: 16px;
-font-weight: 300;
-line-height: 1.65;
-color: var(–ocean);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.62;
+  color: var(--ocean);
 }
-
-/* ── HOTEL CARD ── */
+/* HOTEL CARD */
 .hotel-card {
-background: var(–cream);
-padding: 22px 32px;
-border-top: 1px solid var(–border);
+  background:
+    linear-gradient(135deg, rgba(239,229,214,0.92), rgba(255,250,242,0.92));
+  padding: 24px 24px 26px;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 22px;
 }
-
 .hotel-card-eyebrow {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-color: var(–brass);
-margin-bottom: 8px;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 9px;
 }
-
 .hotel-card-name {
-font-family: ‘Playfair Display’, serif;
-font-size: 18px;
-font-weight: 400;
-color: var(–text);
-margin-bottom: 6px;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 7px;
 }
-
 .hotel-card-detail {
-font-size: 12px;
-color: var(–text-soft);
-line-height: 1.6;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
 }
-
-/* ── ALERT ── */
+/* ALERT */
 .alert-box {
-background: var(–brass-pale);
-border-left: 4px solid var(–brass);
-padding: 16px 20px 16px 24px;
-display: flex;
-gap: 12px;
-font-size: 13px;
-color: #5a3e10;
-line-height: 1.55;
+  background:
+    linear-gradient(135deg, rgba(251,241,223,0.98), rgba(255,250,242,0.94));
+  border: 1px solid rgba(154,116,64,0.26);
+  border-top: none;
+  padding: 18px 20px;
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: #5a3e10;
+  line-height: 1.55;
+  box-shadow: var(--shadow-card);
 }
-.alert-box-icon { flex-shrink: 0; }
-
-/* ── PRACTICAL ── */
+.alert-box-icon {
+  flex-shrink: 0;
+}
+/* PRACTICAL */
 .practical-box {
-background: var(–sage-pale);
-border-left: 4px solid var(–sage);
-padding: 18px 20px 18px 24px;
+  background:
+    linear-gradient(135deg, rgba(238,245,240,0.98), rgba(255,250,242,0.94));
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-card);
 }
-
 .practical-box-label {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-color: var(–sage);
-margin-bottom: 12px;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 12px;
 }
-
-.practical-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-
+.practical-box ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .practical-box li {
-font-size: 13px;
-color: var(–text-mid);
-padding-left: 16px;
-position: relative;
-line-height: 1.5;
+  font-size: 13px;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
 }
-
 .practical-box li::before {
-content: ‘–’;
-position: absolute;
-left: 0;
-color: var(–sage);
-font-weight: 500;
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--sage);
+  font-weight: 500;
 }
-
-/* ── SECTION WIDE ── */
-.section-wide { padding: 48px 32px; background: var(–white); }
-.section-wide-alt { padding: 48px 32px; background: var(–ivory); }
-
+/* WIDE SECTIONS */
+.section-wide,
+.section-wide-alt {
+  margin: 0 18px;
+  padding: 32px 24px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+.section-wide {
+  background: rgba(255,250,242,0.88);
+}
+.section-wide-alt {
+  background: rgba(246,238,223,0.72);
+}
 .section-eyebrow {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 3px;
-text-transform: uppercase;
-color: var(–ocean);
-margin-bottom: 8px;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ocean);
+  margin-bottom: 8px;
 }
-
 .section-title {
-font-family: ‘Playfair Display’, serif;
-font-size: 26px;
-font-weight: 400;
-color: var(–text);
-margin-bottom: 4px;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 4px;
+  letter-spacing: -0.4px;
 }
-
 .section-sub {
-font-size: 13px;
-color: var(–text-soft);
-margin-bottom: 28px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 28px;
 }
-
-/* ── RECAP TABLE ── */
-.recap-table { width: 100%; border-collapse: collapse; }
-
+/* RECAP */
+.recap-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 .recap-table thead th {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(–text-soft);
-text-align: left;
-padding-bottom: 12px;
-border-bottom: 2px solid var(–ocean-light);
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--soft);
+  text-align: left;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(47,111,131,0.28);
 }
-
 .recap-table tbody td {
-padding: 14px 0;
-border-bottom: 1px solid var(–border);
-vertical-align: top;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(154,116,64,0.14);
+  vertical-align: top;
 }
-.recap-table tbody tr:last-child td { border-bottom: none; }
-
-.col-j { color: var(–ocean); font-weight: 500; font-size: 11px; letter-spacing: 1px; width: 28px; padding-top: 16px; }
-.col-hotel { font-family: ‘Playfair Display’, serif; font-size: 16px; font-weight: 400; color: var(–text); padding-right: 12px; }
-.col-zone { font-size: 11.5px; color: var(–text-soft); text-align: right; padding-top: 16px; }
-
-/* ── PROGRESS ── */
-.progress-list { display: flex; flex-direction: column; margin-top: 28px; }
-
+.recap-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.col-j {
+  color: var(--ocean);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1px;
+  width: 28px;
+  padding-top: 16px;
+}
+.col-hotel {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--ink);
+  padding-right: 12px;
+}
+.col-zone {
+  font-size: 11.5px;
+  color: var(--muted);
+  text-align: right;
+  padding-top: 16px;
+}
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 28px;
+}
 .progress-item {
-display: flex;
-gap: 16px;
-padding: 14px 0;
-border-bottom: 1px solid var(–border);
-align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(154,116,64,0.14);
+  align-items: flex-start;
 }
-.progress-item:last-child { border-bottom: none; }
-
+.progress-item:last-child {
+  border-bottom: none;
+}
 .progress-dot {
-width: 8px; height: 8px;
-border-radius: 50%;
-background: var(–ocean);
-flex-shrink: 0;
-margin-top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ocean);
+  flex-shrink: 0;
+  margin-top: 6px;
+  box-shadow: 0 0 0 5px rgba(47,111,131,0.10);
 }
-
-.progress-label { font-size: 11px; font-weight: 500; color: var(–ocean); margin-bottom: 2px; }
-.progress-text { font-size: 13px; color: var(–text-mid); line-height: 1.5; }
-
-/* ── CHECKLIST ── */
-.checklist-group { margin-bottom: 32px; }
-
+.progress-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ocean);
+  margin-bottom: 2px;
+}
+.progress-text {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+/* CHECKLIST */
+.checklist-group {
+  margin-bottom: 32px;
+}
+.checklist-group:last-child {
+  margin-bottom: 0;
+}
 .checklist-group-label {
-font-size: 9px;
-font-weight: 500;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-color: var(–ocean);
-padding-bottom: 10px;
-border-bottom: 2px solid var(–ocean-light);
-margin-bottom: 4px;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--ocean);
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(47,111,131,0.28);
+  margin-bottom: 4px;
 }
-
 .check-row {
-display: flex;
-gap: 14px;
-align-items: flex-start;
-padding: 12px 0;
-border-bottom: 1px solid var(–border);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(154,116,64,0.14);
 }
-.check-row:last-child { border-bottom: none; }
-
+.check-row:last-child {
+  border-bottom: none;
+}
 .check-box {
-width: 20px; height: 20px;
-border: 2px solid var(–ocean-light);
-border-radius: 4px;
-flex-shrink: 0;
-margin-top: 1px;
-background: var(–white);
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--ocean-light);
+  border-radius: 7px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  background: rgba(255,250,242,0.86);
 }
-
-.check-main { font-size: 14px; color: var(–text); line-height: 1.4; }
-.check-sub  { font-size: 12px; color: var(–text-soft); margin-top: 2px; line-height: 1.4; }
-
-/* ── ADAPT ── */
-.adapt-grid { display: flex; flex-direction: column; gap: 10px; }
-
+.check-main {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.4;
+}
+.check-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+/* ADAPT */
+.adapt-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 .adapt-card {
-background: var(–white);
-border-radius: 10px;
-overflow: hidden;
-border: 1px solid var(–border);
-box-shadow: 0 2px 10px rgba(30,95,122,0.08);
+  background: rgba(255,250,242,0.94);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(154,116,64,0.18);
+  box-shadow: 0 10px 30px rgba(18,63,82,0.07);
 }
-
 .adapt-head {
-display: flex;
-align-items: center;
-gap: 12px;
-padding: 15px 18px;
-font-size: 13.5px;
-font-weight: 400;
-color: var(–text);
-background: var(–ocean-pale);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  background: linear-gradient(135deg, rgba(233,243,244,0.94), rgba(255,250,242,0.94));
 }
-
-.adapt-emoji { font-size: 16px; }
-
+.adapt-emoji {
+  font-size: 16px;
+}
 .adapt-body {
-border-top: 1px solid var(–ocean-light);
-padding: 14px 18px;
-font-size: 13px;
-color: var(–text-mid);
-line-height: 1.6;
+  border-top: 1px solid rgba(47,111,131,0.16);
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
 }
-
-.adapt-body ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-.adapt-body li { padding-left: 14px; position: relative; }
-.adapt-body li::before { content: ‘–’; position: absolute; left: 0; color: var(–ocean-mid); font-weight: 500; }
-
-/* ── FOOTER ── */
+.adapt-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.adapt-body li {
+  padding-left: 14px;
+  position: relative;
+}
+.adapt-body li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--ocean-mid);
+  font-weight: 500;
+}
+/* FOOTER */
 .footer {
-background: linear-gradient(150deg, #0d3a52 0%, #1e5f7a 100%);
-padding: 52px 32px;
-text-align: center;
+  margin: 0 18px;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.12), transparent 32%),
+    linear-gradient(145deg, #092c3b 0%, var(--ocean) 100%);
+  padding: 54px 32px;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 55px rgba(18,63,82,0.22);
 }
-
 .footer-title {
-font-family: ‘Playfair Display’, serif;
-font-style: italic;
-font-size: 26px;
-font-weight: 300;
-color: rgba(255,255,255,0.8);
-margin-bottom: 12px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 30px;
+  font-weight: 300;
+  color: rgba(255,250,242,0.86);
+  margin-bottom: 12px;
 }
-
 .footer-meta {
-font-size: 9.5px;
-letter-spacing: 2.5px;
-text-transform: uppercase;
-color: rgba(255,255,255,0.35);
+  font-size: 9.5px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,250,242,0.42);
 }
-
-.gap-md { height: 24px; }
-.section-divider { height: 8px; background: var(–ocean-pale); }
+.gap-md {
+  height: 10px;
+}
+.section-divider {
+  height: 22px;
+}
+@media (max-width: 380px) {
+  .cover-title {
+    font-size: 58px;
+  }
+  .day-title,
+  .section-title {
+    font-size: 27px;
+  }
+  .step {
+    grid-template-columns: 52px 1fr;
+    gap: 0 12px;
+  }
+  .step-time {
+    font-size: 10px;
+  }
+}
 </style>
-
 </head>
 <body>
-
 <!-- ══════ COVER ══════ -->
-
 <div class="cover">
   <div class="cover-eyebrow">Itinéraire · Travel Designer</div>
   <div class="cover-title">Asturies<span class="cover-title-sub">Paraíso Natural</span></div>
@@ -600,15 +758,11 @@ color: rgba(255,255,255,0.35);
     <div class="hotel-row"><span class="hotel-name">La Casona de Sobrepiedra</span><span class="hotel-night-tag">Nuit 3</span></div>
   </div>
 </div>
-
 <!-- NAV -->
-
 <div class="nav">
   <a href="#j1">J1</a><a href="#j2">J2</a><a href="#j3">J3</a><a href="#j4">J4</a><a href="#checklist">✓</a><a href="#adapt">⚡</a>
 </div>
-
 <!-- ══════ JOUR 1 ══════ -->
-
 <div class="gap-md"></div>
 <div id="j1" class="section">
   <div class="day-header">
@@ -653,11 +807,8 @@ color: rgba(255,255,255,0.35);
     <div class="hotel-card-detail">Muros de Nalón &nbsp;·&nbsp; Petit-déjeuner maison légendaire &nbsp;·&nbsp; Jardins &nbsp;·&nbsp; Piscine</div>
   </div>
 </div>
-
 <div class="section-divider"></div>
-
 <!-- ══════ JOUR 2 ══════ -->
-
 <div class="day-sep"><div class="day-sep-line"></div><div class="day-sep-text">Vendredi 15 Mai</div><div class="day-sep-line"></div></div>
 <div id="j2" class="section">
   <div class="day-header">
@@ -722,11 +873,8 @@ color: rgba(255,255,255,0.35);
     <div class="hotel-card-detail">Llanes &nbsp;·&nbsp; Architecture "indiano" coloniale &nbsp;·&nbsp; Jardins &nbsp;·&nbsp; Vue montagnes</div>
   </div>
 </div>
-
 <div class="section-divider"></div>
-
 <!-- ══════ JOUR 3 ══════ -->
-
 <div class="day-sep"><div class="day-sep-line"></div><div class="day-sep-text">Samedi 16 Mai</div><div class="day-sep-line"></div></div>
 <div id="j3" class="section">
   <div class="day-header">
@@ -803,11 +951,8 @@ color: rgba(255,255,255,0.35);
     <div class="hotel-card-detail">Vallée du Sella &nbsp;·&nbsp; Vue directe sur les Picos &nbsp;·&nbsp; Rivière à pied &nbsp;·&nbsp; Hôte exceptionnel</div>
   </div>
 </div>
-
 <div class="section-divider"></div>
-
 <!-- ══════ JOUR 4 ══════ -->
-
 <div class="day-sep"><div class="day-sep-line"></div><div class="day-sep-text">Dimanche 17 Mai</div><div class="day-sep-line"></div></div>
 <div id="j4" class="section">
   <div class="day-header">
@@ -852,11 +997,8 @@ color: rgba(255,255,255,0.35);
   </div>
   <div class="gap-md"></div>
 </div>
-
 <div class="section-divider"></div>
-
 <!-- ══════ RÉCAP ══════ -->
-
 <div class="section-wide">
   <div class="section-eyebrow">Vue d'ensemble</div>
   <div class="section-title">Récapitulatif</div>
@@ -877,29 +1019,23 @@ color: rgba(255,255,255,0.35);
     <div class="progress-item"><div class="progress-dot"></div><div><div class="progress-label">Jour 4</div><div class="progress-text">Panorama conclusif. Sortie en beauté.</div></div></div>
   </div>
 </div>
-
 <div class="section-divider"></div>
-
 <!-- ══════ CHECKLIST ══════ -->
-
 <div id="checklist" class="section-wide-alt">
   <div class="section-eyebrow">Avant le départ</div>
   <div class="section-title">Checklist</div>
   <div class="section-sub">Actions à compléter avant de partir</div>
-
   <div class="checklist-group">
     <div class="checklist-group-label">Réservations obligatoires</div>
     <div class="check-row"><div class="check-box"></div><div><div class="check-main">Billets navette Lacs de Covadonga</div><div class="check-sub">alsa.com · pour le samedi 16 mai · 9€/adulte · acheter avant le voyage</div></div></div>
     <div class="check-row"><div class="check-box"></div><div><div class="check-main">Déjeuner Casa Eutimio · Lastres</div><div class="check-sub">Pour le vendredi 15 mai · réservez 2–3 jours avant</div></div></div>
     <div class="check-row"><div class="check-box"></div><div><div class="check-main">Voiture de location confirmée</div><div class="check-sub">Aéroport de Ranón · vérifiez les horaires de retrait</div></div></div>
   </div>
-
   <div class="checklist-group">
     <div class="checklist-group-label">À faire sur place (J2 soir)</div>
     <div class="check-row"><div class="check-box"></div><div><div class="check-main">Consulter les marées pour le J3</div><div class="check-sub">tideschart.com · chercher "Llanes" · noter l'heure de pleine mer du 16 mai</div></div></div>
     <div class="check-row"><div class="check-box"></div><div><div class="check-main">Régler le réveil du J3 selon la marée</div><div class="check-sub">Objectif : arriver aux Bufones 1h avant la pleine mer</div></div></div>
   </div>
-
   <div class="checklist-group">
     <div class="checklist-group-label">À emporter</div>
     <div class="check-row"><div class="check-box"></div><div><div class="check-main">Chaussures de marche légères</div><div class="check-sub">Sentiers côtiers + lacs · pas besoin de chaussures techniques</div></div></div>
@@ -909,11 +1045,8 @@ color: rgba(255,255,255,0.35);
     <div class="check-row"><div class="check-box"></div><div><div class="check-main">Téléphone chargé + powerbank</div><div class="check-sub">Pour les zones sans réseau dans les Picos</div></div></div>
   </div>
 </div>
-
 <div class="section-divider"></div>
-
 <!-- ══════ ADAPTATIONS ══════ -->
-
 <div id="adapt" class="section-wide">
   <div class="section-eyebrow">Si nécessaire</div>
   <div class="section-title">Adaptations rapides</div>
@@ -961,13 +1094,10 @@ color: rgba(255,255,255,0.35);
     </div>
   </div>
 </div>
-
 <!-- FOOTER -->
-
 <div class="footer">
   <div class="footer-title">Buen viaje</div>
   <div class="footer-meta">Asturies · 14–17 Mai 2026 · Itinéraire finalisé</div>
 </div>
-
 </body>
 </html>
